@@ -11,8 +11,8 @@ class DetailSurahModel {
   String? audio;
   bool? status;
   List<Ayat>? ayat;
-  bool? suratSelanjutnya;
-  SuratSebelumnya? suratSebelumnya;
+  // SuratSelanjutnya? suratSelanjutnya;
+  // SuratSebelumnya? suratSebelumnya;
 
   DetailSurahModel({
     this.nomor,
@@ -25,8 +25,8 @@ class DetailSurahModel {
     this.audio,
     this.status,
     this.ayat,
-    this.suratSelanjutnya,
-    this.suratSebelumnya,
+    // this.suratSelanjutnya,
+    // this.suratSebelumnya,
   });
 
   factory DetailSurahModel.fromJson(String str) =>
@@ -48,10 +48,13 @@ class DetailSurahModel {
         ayat: json["ayat"] == null
             ? []
             : List<Ayat>.from(json["ayat"]!.map((x) => Ayat.fromMap(x))),
-        suratSelanjutnya: json["surat_selanjutnya"],
-        suratSebelumnya: json["surat_sebelumnya"] == null
-            ? null
-            : SuratSebelumnya.fromMap(json["surat_sebelumnya"]),
+        // suratSelanjutnya: json["surat_selanjutnya"] == null
+        //     ? null
+        //     : SuratSelanjutnya.fromMap(json["surat_selanjutnya"]),
+        // // suratSebelumnya: json["surat_sebelumnya"],
+        // suratSebelumnya: json["surat_sebelumnya"] == null
+        //     ? null
+        //     : SuratSebelumnya.fromMap(json["surat_sebelumnya"]),
       );
 
   Map<String, dynamic> toMap() => {
@@ -66,8 +69,8 @@ class DetailSurahModel {
         "status": status,
         "ayat":
             ayat == null ? [] : List<dynamic>.from(ayat!.map((x) => x.toMap())),
-        "surat_selanjutnya": suratSelanjutnya,
-        "surat_sebelumnya": suratSebelumnya?.toMap(),
+        // "surat_selanjutnya": suratSelanjutnya?.toMap(),
+        // "surat_sebelumnya": suratSebelumnya,
       };
 }
 
@@ -111,55 +114,109 @@ class Ayat {
       };
 }
 
-class SuratSebelumnya {
-  int? id;
-  int? nomor;
-  String? nama;
-  String? namaLatin;
-  int? jumlahAyat;
-  String? tempatTurun;
-  String? arti;
-  String? deskripsi;
-  String? audio;
+// class SuratSelanjutnya {
+//   int? id;
+//   int? nomor;
+//   String? nama;
+//   String? namaLatin;
+//   int? jumlahAyat;
+//   String? tempatTurun;
+//   String? arti;
+//   String? deskripsi;
+//   String? audio;
 
-  SuratSebelumnya({
-    this.id,
-    this.nomor,
-    this.nama,
-    this.namaLatin,
-    this.jumlahAyat,
-    this.tempatTurun,
-    this.arti,
-    this.deskripsi,
-    this.audio,
-  });
+//   SuratSelanjutnya({
+//     this.id,
+//     this.nomor,
+//     this.nama,
+//     this.namaLatin,
+//     this.jumlahAyat,
+//     this.tempatTurun,
+//     this.arti,
+//     this.deskripsi,
+//     this.audio,
+//   });
 
-  factory SuratSebelumnya.fromJson(String str) =>
-      SuratSebelumnya.fromMap(json.decode(str));
+//   factory SuratSelanjutnya.fromJson(String str) =>
+//       SuratSelanjutnya.fromMap(json.decode(str));
 
-  String toJson() => json.encode(toMap());
+//   String toJson() => json.encode(toMap());
 
-  factory SuratSebelumnya.fromMap(Map<String, dynamic> json) => SuratSebelumnya(
-        id: json["id"],
-        nomor: json["nomor"],
-        nama: json["nama"],
-        namaLatin: json["nama_latin"],
-        jumlahAyat: json["jumlah_ayat"],
-        tempatTurun: json["tempat_turun"],
-        arti: json["arti"],
-        deskripsi: json["deskripsi"],
-        audio: json["audio"],
-      );
+//   factory SuratSelanjutnya.fromMap(Map<String, dynamic> json) =>
+//       SuratSelanjutnya(
+//         id: json["id"],
+//         nomor: json["nomor"],
+//         nama: json["nama"],
+//         namaLatin: json["nama_latin"],
+//         jumlahAyat: json["jumlah_ayat"],
+//         tempatTurun: json["tempat_turun"],
+//         arti: json["arti"],
+//         deskripsi: json["deskripsi"],
+//         audio: json["audio"],
+//       );
 
-  Map<String, dynamic> toMap() => {
-        "id": id,
-        "nomor": nomor,
-        "nama": nama,
-        "nama_latin": namaLatin,
-        "jumlah_ayat": jumlahAyat,
-        "tempat_turun": tempatTurun,
-        "arti": arti,
-        "deskripsi": deskripsi,
-        "audio": audio,
-      };
-}
+//   Map<String, dynamic> toMap() => {
+//         "id": id,
+//         "nomor": nomor,
+//         "nama": nama,
+//         "nama_latin": namaLatin,
+//         "jumlah_ayat": jumlahAyat,
+//         "tempat_turun": tempatTurun,
+//         "arti": arti,
+//         "deskripsi": deskripsi,
+//         "audio": audio,
+//       };
+// }
+
+// class SuratSebelumnya {
+//   int? id;
+//   int? nomor;
+//   String? nama;
+//   String? namaLatin;
+//   int? jumlahAyat;
+//   String? tempatTurun;
+//   String? arti;
+//   String? deskripsi;
+//   String? audio;
+
+//   SuratSebelumnya({
+//     this.id,
+//     this.nomor,
+//     this.nama,
+//     this.namaLatin,
+//     this.jumlahAyat,
+//     this.tempatTurun,
+//     this.arti,
+//     this.deskripsi,
+//     this.audio,
+//   });
+
+//   factory SuratSebelumnya.fromJson(String str) =>
+//       SuratSebelumnya.fromMap(json.decode(str));
+
+//   String toJson() => json.encode(toMap());
+
+//   factory SuratSebelumnya.fromMap(Map<String, dynamic> json) => SuratSebelumnya(
+//         id: json["id"],
+//         nomor: json["nomor"],
+//         nama: json["nama"],
+//         namaLatin: json["nama_latin"],
+//         jumlahAyat: json["jumlah_ayat"],
+//         tempatTurun: json["tempat_turun"],
+//         arti: json["arti"],
+//         deskripsi: json["deskripsi"],
+//         audio: json["audio"],
+//       );
+
+//   Map<String, dynamic> toMap() => {
+//         "id": id,
+//         "nomor": nomor,
+//         "nama": nama,
+//         "nama_latin": namaLatin,
+//         "jumlah_ayat": jumlahAyat,
+//         "tempat_turun": tempatTurun,
+//         "arti": arti,
+//         "deskripsi": deskripsi,
+//         "audio": audio,
+//       };
+// }

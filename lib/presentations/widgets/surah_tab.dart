@@ -24,94 +24,109 @@ class _SurahTabState extends State<SurahTab> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 24.0),
-      child: BlocBuilder<SurahBloc, SurahState>(
-        builder: (context, state) {
-          if (state is SurahLoaded) {
-            return ListView.separated(
-              physics: const NeverScrollableScrollPhysics(),
-              separatorBuilder: (context, index) {
-                return Divider(
-                  thickness: 1,
-                  height: 32,
-                  color: AppColors.grey.withOpacity(0.35),
-                );
-              },
-              itemBuilder: (context, index) {
-                return GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return const DetailSurah();
-                    }));
-                  },
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Stack(
-                        children: [
-                          Image.asset(
-                            AppImages.iconNumber,
-                            height: 36,
-                            width: 36,
-                          ),
-                          SizedBox(
-                            height: 36,
-                            width: 36,
-                            child: Center(
-                              child: Text(
-                                state.model[index].nomor.toString(),
-                                style: GoogleFonts.poppins(
-                                    textStyle: const TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColors.black,
-                                )),
-                              ),
+    return BlocBuilder<SurahBloc, SurahState>(
+      builder: (context, state) {
+        if (state is SurahLoaded) {
+          return ListView.separated(
+            padding: const EdgeInsets.only(top: 24.0),
+            physics: const NeverScrollableScrollPhysics(),
+            separatorBuilder: (context, index) {
+              return Divider(
+                thickness: 1,
+                height: 32,
+                color: AppColors.grey.withOpacity(0.35),
+              );
+            },
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return DetailSurah(
+                      number: state.model[index].nomor!,
+                    );
+                  }));
+                },
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Stack(
+                      children: [
+                        Image.asset(
+                          AppImages.iconNumber,
+                          height: 36,
+                          width: 36,
+                        ),
+                        SizedBox(
+                          height: 36,
+                          width: 36,
+                          child: Center(
+                            child: Text(
+                              state.model[index].nomor.toString(),
+                              style: GoogleFonts.poppins(
+                                  textStyle: const TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.black,
+                              )),
                             ),
                           ),
-                        ],
-                      ),
-                      const SizedBox(width: 16),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            state.model[index].namaLatin ?? '',
-                            style: GoogleFonts.poppins(
-                                textStyle: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.black,
-                            )),
-                          ),
-                          const SizedBox(height: 4),
-                          Text(state.model[index].tempatTurun ?? '')
-                        ],
-                      ),
-                      const Spacer(),
-                      Text(
-                        state.model[index].nama ?? '',
-                        style: GoogleFonts.poppins(
-                            textStyle: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.secondary,
-                        )),
-                      ),
-                    ],
-                  ),
-                );
-              },
-              itemCount: state.model.length,
-            );
-          }
-          return const Center(
-            child: CircularProgressIndicator(),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(width: 16),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          state.model[index].namaLatin!,
+                          style: GoogleFonts.poppins(
+                              textStyle: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.black,
+                          )),
+                        ),
+                        const SizedBox(height: 4),
+                        Row(
+                          children: [
+                            Text(state.model[index].tempatTurun!.toUpperCase()),
+                            const SizedBox(width: 5),
+                            Container(
+                              height: 4,
+                              width: 4,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(100),
+                                color: AppColors.grey.withOpacity(0.35),
+                              ),
+                            ),
+                            const SizedBox(width: 5),
+                            Text(
+                                '${state.model[index].jumlahAyat.toString()} Ayat'),
+                          ],
+                        )
+                      ],
+                    ),
+                    const Spacer(),
+                    Text(
+                      state.model[index].nama!,
+                      style: GoogleFonts.poppins(
+                          textStyle: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.secondary,
+                      )),
+                    ),
+                  ],
+                ),
+              );
+            },
+            itemCount: state.model.length,
           );
-        },
-      ),
+        }
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
     );
   }
 }

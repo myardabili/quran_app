@@ -93,12 +93,12 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         const SizedBox(height: 24),
-        _lastRead(),
+        _card(),
       ],
     );
   }
 
-  Widget _lastRead() {
+  Widget _card() {
     return Stack(
       children: [
         Image.asset(
