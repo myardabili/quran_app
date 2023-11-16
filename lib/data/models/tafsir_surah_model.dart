@@ -11,8 +11,6 @@ class TafsirSurahModel {
   String? deskripsi;
   String? audio;
   List<Tafsir>? tafsir;
-  SuratSelanjutnya? suratSelanjutnya;
-  bool? suratSebelumnya;
 
   TafsirSurahModel({
     this.status,
@@ -25,8 +23,6 @@ class TafsirSurahModel {
     this.deskripsi,
     this.audio,
     this.tafsir,
-    this.suratSelanjutnya,
-    this.suratSebelumnya,
   });
 
   factory TafsirSurahModel.fromJson(String str) =>
@@ -48,10 +44,6 @@ class TafsirSurahModel {
         tafsir: json["tafsir"] == null
             ? []
             : List<Tafsir>.from(json["tafsir"]!.map((x) => Tafsir.fromMap(x))),
-        suratSelanjutnya: json["surat_selanjutnya"] == null
-            ? null
-            : SuratSelanjutnya.fromMap(json["surat_selanjutnya"]),
-        suratSebelumnya: json["surat_sebelumnya"],
       );
 
   Map<String, dynamic> toMap() => {
@@ -67,62 +59,6 @@ class TafsirSurahModel {
         "tafsir": tafsir == null
             ? []
             : List<dynamic>.from(tafsir!.map((x) => x.toMap())),
-        "surat_selanjutnya": suratSelanjutnya?.toMap(),
-        "surat_sebelumnya": suratSebelumnya,
-      };
-}
-
-class SuratSelanjutnya {
-  int? id;
-  int? nomor;
-  String? nama;
-  String? namaLatin;
-  int? jumlahAyat;
-  String? tempatTurun;
-  String? arti;
-  String? deskripsi;
-  String? audio;
-
-  SuratSelanjutnya({
-    this.id,
-    this.nomor,
-    this.nama,
-    this.namaLatin,
-    this.jumlahAyat,
-    this.tempatTurun,
-    this.arti,
-    this.deskripsi,
-    this.audio,
-  });
-
-  factory SuratSelanjutnya.fromJson(String str) =>
-      SuratSelanjutnya.fromMap(json.decode(str));
-
-  String toJson() => json.encode(toMap());
-
-  factory SuratSelanjutnya.fromMap(Map<String, dynamic> json) =>
-      SuratSelanjutnya(
-        id: json["id"],
-        nomor: json["nomor"],
-        nama: json["nama"],
-        namaLatin: json["nama_latin"],
-        jumlahAyat: json["jumlah_ayat"],
-        tempatTurun: json["tempat_turun"],
-        arti: json["arti"],
-        deskripsi: json["deskripsi"],
-        audio: json["audio"],
-      );
-
-  Map<String, dynamic> toMap() => {
-        "id": id,
-        "nomor": nomor,
-        "nama": nama,
-        "nama_latin": namaLatin,
-        "jumlah_ayat": jumlahAyat,
-        "tempat_turun": tempatTurun,
-        "arti": arti,
-        "deskripsi": deskripsi,
-        "audio": audio,
       };
 }
 

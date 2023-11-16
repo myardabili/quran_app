@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:quran_app/common/constans/colors.dart';
 import 'package:quran_app/common/constans/images.dart';
 import 'package:quran_app/presentations/bloc/surah/surah_bloc.dart';
-import 'package:quran_app/presentations/pages/detail_surah.dart';
+import 'package:quran_app/presentations/pages/detail_surah_page.dart';
 
 class SurahTab extends StatefulWidget {
   const SurahTab({
@@ -41,7 +41,7 @@ class _SurahTabState extends State<SurahTab> {
               return GestureDetector(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return DetailSurah(
+                    return DetailSurahPage(
                       number: state.model[index].nomor!,
                     );
                   }));

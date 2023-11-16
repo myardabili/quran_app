@@ -9,18 +9,18 @@ import 'package:quran_app/presentations/bloc/detail_surah/detail_surah_bloc.dart
 import 'package:quran_app/presentations/widgets/card_detail.dart';
 import 'package:quran_app/presentations/widgets/list_surah_detail.dart';
 
-class DetailSurah extends StatefulWidget {
+class DetailSurahPage extends StatefulWidget {
   final int number;
-  const DetailSurah({
+  const DetailSurahPage({
     Key? key,
     required this.number,
   }) : super(key: key);
 
   @override
-  State<DetailSurah> createState() => _DetailSurahState();
+  State<DetailSurahPage> createState() => _DetailSurahState();
 }
 
-class _DetailSurahState extends State<DetailSurah> {
+class _DetailSurahState extends State<DetailSurahPage> {
   @override
   void initState() {
     context
