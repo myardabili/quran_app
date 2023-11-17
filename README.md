@@ -1,6 +1,17 @@
 # quran_app
 
-A new Flutter project.
+### Desagn Reference:
+[Klik Here](https://www.figma.com/community/file/966921639679380402)
+
+### Package Using:
+* dartz: [Klik Here](https://pub.dev/packages/dartz)
+* flutter_bloc: [Klik Here](https://pub.dev/packages/flutter_bloc)
+* google_fonts: [Klik Here](https://pub.dev/packages/google_fonts)
+* http: [Klik Here](https://pub.dev/packages/http)
+* shimmer: [Klik Here](https://pub.dev/packages/shimmer)
+
+### Screenshot
+<img src="https://i.imgur.com/X1ZQCvH.png" width="200"> <img src="https://i.imgur.com/KH569Nd.png" width="200"> <img src="https://i.imgur.com/To5RjKw.png" width="200"> <img src="https://i.imgur.com/JQFaT6h.png" width="200"> <img src="https://i.imgur.com/romFUxj.png" width="200"> <img src="https://i.imgur.com/jB4K92a.png" width="200"> <img src="https://i.imgur.com/SzasMGG.png" width="200">
 
 ## Getting Started
 
