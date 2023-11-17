@@ -1,7 +1,11 @@
 # quran_app
 
-### Desagn Reference:
-[Klik Here](https://www.figma.com/community/file/966921639679380402)
+### API:
+* equran.id: [Klik Here](https://equran.id/apidev)
+* doa api: [Klik Here](https://doa-doa-api-ahmadramadhan.fly.dev/)
+
+### Design Reference:
+Figma: [Klik Here](https://www.figma.com/community/file/966921639679380402)
 
 ### Package Using:
 * dartz: [Klik Here](https://pub.dev/packages/dartz)
