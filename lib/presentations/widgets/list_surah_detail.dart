@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:quran_app/common/constans/colors.dart';
 import 'package:quran_app/common/constans/images.dart';
 import 'package:quran_app/presentations/bloc/detail_surah/detail_surah_bloc.dart';
+import 'package:quran_app/presentations/widgets/shimmer_widget.dart';
 
 class ListSurahDetail extends StatelessWidget {
   const ListSurahDetail({
@@ -106,6 +107,16 @@ class ListSurahDetail extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   Text(
+                    state.model.ayat![index].tr!,
+                    style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.black,
+                    )),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
                     state.model.ayat![index].idn!,
                     style: GoogleFonts.poppins(
                         textStyle: const TextStyle(
@@ -120,9 +131,7 @@ class ListSurahDetail extends StatelessWidget {
             itemCount: state.model.ayat!.length,
           );
         }
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
+        return const ShimmerWidget();
       },
     );
   }

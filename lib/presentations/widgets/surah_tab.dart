@@ -5,6 +5,7 @@ import 'package:quran_app/common/constans/colors.dart';
 import 'package:quran_app/common/constans/images.dart';
 import 'package:quran_app/presentations/bloc/surah/surah_bloc.dart';
 import 'package:quran_app/presentations/pages/detail_surah_page.dart';
+import 'package:quran_app/presentations/widgets/shimmer_widget.dart';
 
 class SurahTab extends StatefulWidget {
   const SurahTab({
@@ -123,9 +124,7 @@ class _SurahTabState extends State<SurahTab> {
             itemCount: state.model.length,
           );
         }
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
+        return const ShimmerWidget();
       },
     );
   }

@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:quran_app/common/constans/colors.dart';
 import 'package:quran_app/common/constans/images.dart';
 import 'package:quran_app/presentations/bloc/tafsir_surah/tafsir_surah_bloc.dart';
+import 'package:quran_app/presentations/widgets/shimmer_widget.dart';
 
 class ListTafsir extends StatelessWidget {
   const ListTafsir({
@@ -72,9 +73,7 @@ class ListTafsir extends StatelessWidget {
             itemCount: state.model.tafsir!.length,
           );
         }
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
+        return const ShimmerWidget();
       },
     );
   }
