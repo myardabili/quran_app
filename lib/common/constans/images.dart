@@ -2,6 +2,7 @@ class AppImages {
   static const String backgroundSplash = 'assets/images/background_splash.png';
   static const String backgroundHome = 'assets/images/background_home.png';
   static const String backgroundDetail = 'assets/images/background_card.png';
+  static const String muslimPrayer = 'assets/images/muslim_prayer.png';
   static const String iconQuran = 'assets/icons/icon_quran.png';
   static const String iconPrayer = 'assets/icons/icon_prayer.png';
   static const String iconQuranSelected =

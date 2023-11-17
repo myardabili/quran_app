@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/common/constans/images.dart';
 import 'package:quran_app/presentations/pages/home_page.dart';
-import 'package:quran_app/presentations/pages/prayer_page.dart';
+import 'package:quran_app/presentations/pages/doa_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -21,7 +21,7 @@ class _MainPageState extends State<MainPage> {
 
   final List<Widget> _pages = [
     const HomePage(),
-    const PrayerPage(),
+    const DoaPage(),
   ];
 
   @override
